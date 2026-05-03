@@ -1,4 +1,6 @@
-# Instructions
+# Instructions et Résultats
+
+## Instructions
 
 Créez un convertisseur qui prend un nombre décimal saisi par l'utilisateur et affiche sa représentation binaire. Les codes HTML et CSS vous sont préalablement fournis, vous devez ainsi mettre en place la fonction JS `convertToBinary()` qui permettra la conversion. Analysez bien le code HTML avant de commencer le développement de la fonction.
 
@@ -26,3 +28,9 @@ Par exemple, pour convertir le nombre décimal 10 en binaire :
 En lisant les restes de bas en haut (1010), on obtient la représentation binaire du nombre décimal 10.
 
 > Si vous avez des difficultés, vous pouvez vous référer aux cours [Apprenez à programmer avec JavaScript](https://openclassrooms.com/fr/courses/7696886-apprenez-a-programmer-avec-javascript), [Découvrez le fonctionnement des algorithmes](https://openclassrooms.com/fr/courses/7527306-decouvrez-le-fonctionnement-des-algorithmes), et [Créez des pages web dynamiques avec JavaScript](https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript).
+
+## Résultat
+
+Voici le rendu du convertisseur :
+
+![Rendu de l'exercice 7](image.png)

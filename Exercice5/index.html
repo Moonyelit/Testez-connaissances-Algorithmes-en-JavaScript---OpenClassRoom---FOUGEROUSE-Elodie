@@ -1,24 +1,49 @@
 <!DOCTYPE html>
+<!-- =====================================================
+     REVUE DE CODE — Exercice 5 : Accessibilité
+     ===================================================== -->
+
+<!-- ✅ BIEN : lang="fr" sur <html> — les lecteurs d'écran prononcent correctement le français. -->
 <html lang="fr">
 <head>
+    <!-- ⚠️ SUGGESTION : <meta charset> ajouté — garantit l'affichage correct des accents. -->
+    <!-- CODE ORIGINAL : pas de meta charset -->
+    <meta charset="UTF-8">
     <title>Page avec Accessibilité</title>
 </head>
 <body>
 <h1>Titre de la Page</h1>
 <p>Ceci est un paragraphe de texte.</p>
 
+<!-- ✅ BIEN : aria-label sur le <form> aide les lecteurs d'écran à identifier le formulaire. -->
 <form aria-label="Formulaire de contact">
+
+    <!-- ✅ BIEN : <label for> lié à <input id> — essentiel pour l'accessibilité. -->
+    <!-- ✅ BIEN : aria-required annonce aux lecteurs d'écran que le champ est obligatoire. -->
+    <!-- ⚠️ SUGGESTION : `required` natif ajouté pour que le navigateur bloque l'envoi
+         si le champ est vide, en plus de aria-required. -->
+    <!-- CODE ORIGINAL : <input id="name" type="text" placeholder="Entrez votre nom" aria-required="true"> -->
     <label for="name">Nom</label>
-    <input id="name" type="text" placeholder="Entrez votre nom" aria-required="true">
+    <input id="name" type="text" placeholder="Entrez votre nom" required aria-required="true">
 
+    <!-- CODE ORIGINAL : <input id="email" type="email" placeholder="..." aria-required="true"> -->
     <label for="email">Adresse e-mail</label>
-    <input id="email" type="email" placeholder="Entrez votre adresse e-mail" aria-required="true">
+    <input id="email" type="email" placeholder="Entrez votre adresse e-mail" required aria-required="true">
 
-    <button type="submit" aria-label="Envoyer le formulaire de contact">Envoyer</button>
+    <!-- ⚠️ SUGGESTION : aria-label supprimé — "Envoyer" est déjà suffisamment descriptif.
+         L'aria-label écrasait le texte visible pour les lecteurs d'écran. -->
+    <!-- CODE ORIGINAL : <button type="submit" aria-label="Envoyer le formulaire de contact">Envoyer</button> -->
+    <button type="submit">Envoyer</button>
 </form>
 
-<img src="assets/image.png" height="250" alt="Image illustrative de la page" aria-hidden="false">
+<!-- ✅ BIEN : alt décrit l'image pour les lecteurs d'écran. -->
+<!-- ⚠️ SUGGESTION : aria-hidden="false" supprimé — c'est la valeur par défaut, inutile de l'écrire. -->
+<!-- CODE ORIGINAL : <img src="assets/image.png" height="250" alt="Image illustrative de la page" aria-hidden="false"> -->
+<img src="assets/image.png" height="250" alt="Image illustrative de la page">
 
-<a href="#" title="Lien vers la page d'accueil" aria-label="Lien vers la page d'accueil">Cliquez ici</a>
+<!-- ⚠️ SUGGESTION (texte du lien) : "Cliquez ici" remplacé par un texte descriptif.
+     Les lecteurs d'écran lisent les liens isolément — le texte doit indiquer la destination. -->
+<!-- CODE ORIGINAL : <a href="#" title="Lien vers la page d'accueil" aria-label="Lien vers la page d'accueil">Cliquez ici</a> -->
+<a href="/accueil">Page d'accueil</a>
 </body>
 </html>
